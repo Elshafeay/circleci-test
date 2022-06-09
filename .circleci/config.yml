@@ -1,0 +1,23 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.7
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:14.17
+    steps:
+      - checkout
+      - run:
+          name: Installing dependencies
+          command: npm install
+      - run:
+          name: Building the project
+          command: npm run build
+      - run:
+          name: Testing the lint
+          command: npm run lint
+      - run:
+          name: Testing the project
+          command: npm run test
+
