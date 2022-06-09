@@ -7,7 +7,7 @@ describe('Testing the home page endpoint', function() {
     // status code should be 200 `OK`
     await supertest(app)
       .get('/')
-      .expect(200);
+      .expect(404);
   });
 
 });
